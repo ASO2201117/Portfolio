@@ -210,7 +210,7 @@ p {
   margin-right: 40px;
   font-family: 'Noto Serif JP', sans-serif;
   opacity: 0;
-  color: #20ad07;
+  color: rgb(47, 213, 17);
  
 }
 .tyuou h1.name.active{
@@ -239,7 +239,7 @@ p {
   text-align: center;
 }
 .workwork p{
-  color:#20ad07;
+  color:rgb(241, 8, 74);
   font-size: 40px;
   padding-top:22px;
   font-family: Arial;
