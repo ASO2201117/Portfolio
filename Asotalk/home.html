@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link rel="manifest" href="http://learning-sql.kikirara.jp/uploads/manifest.json">
+
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <title>ホーム画面</title>
+</head>
+<style>
+    @media screen and (max-width: 1280px){
+    @media screen and (min-width: 280px){
+    body{
+      background-image: url('http://learning-sql.kikirara.jp/uploads/h4.jpg');
+        /*height: 800px;*/
+        /*position:relative;*/
+         margin-top:0px;
+         margin-left:0px;
+         margin-right:0px;
+         margin-bottom:0px;
+         bottom:0px;
+         height: auto;
+    }
+/*body {
+    background-color: #cee9fb;
+    padding: 0%;
+    margin: 0%;
+}*/
+
+.topName {
+    text-align: center;
+    font-size: 120%;
+}
+.logoimg{
+    width:120px;
+    height:60px;
+}
+
+.image {
+    /*margin: 5% auto;
+    margin-top:5%;
+    margin-left:5%;
+    margin-right:5%;
+    display: flex;
+    width: 90%;*/
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    display: flex;
+}
+
+.white {
+    width: 100%;
+    height: 30vh;
+    border-radius: 50px 50px 50px 50px;
+    background-color: aqua;
+    position: relative;
+}
+
+.name {
+    font-size: 120%;
+    margin: 5% 5% 0 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+.age {
+    font-size: 120%;
+    margin: 5% 5% 0 0;
+}
+.gender {
+    font-size: 120%;
+    margin: 5% 5% 0 0;
+}
+.introduction {
+    margin: 5% auto;
+    display: flex;
+    width: 80%;
+    height: 50%;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 120%;
+}
+.message {
+    position: absolute;
+    right: 10%;
+    top: -25%;
+}
+.footer{
+    width:100%;
+    position:fixed;
+    bottom: 0;
+  }
+  
+  .bottom-menu {
+      display: block;
+      position:relative;
+      margin-top:auto;
+      justify-content: center;
+      text-align: center;
+      background-position: bottom;
+  }
+    
+    .bottom-menu a {
+      text-decoration: none;
+      color: #333;
+      padding: 20px;
+      margin:  20px;
+      bottom:0;
+  }
+.pc{
+    display: none;
+  }
+}
+}
+@media screen and (min-width: 1280.5px){
+   body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  }
+    .topName{
+        display:none;
+    }
+    .image{
+        display: none;
+    }
+    .white{
+        display: none;
+    }
+    .logo{
+      display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+  }
+  @media screen and (max-width: 279.5px){
+    body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  }
+     .topName{
+        display:none;
+    }
+    .logo{
+      display: none;
+    }
+.image{
+        display: none;
+    }
+    .white{
+        display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+  }
+
+</style>
+
+<body>
+<div class="suisyo">
+        <p class="pc">スマホ画面での閲覧を推奨します</p>
+        </div>        
+<p id="name" class="topName"></p>
+    <img id="profile_image" src="" class="image">
+    <div class="white">
+        <div class="flex">
+            <img src="http://learning-sql.kikirara.jp/message.png" class="message" onclick="locationChat()">
+            <p id="name2" class="name"></p>
+            <p id="age" class="age"></p>
+            <p id="gender" class="gender"></p>
+        </div>
+        <textarea id="introduction" class="introduction"></textarea>
+    </div>
+    <footer class="footer" style="left:0px;">
+        <div class="bottom-menu">
+            <a href="http://learning-sql.kikirara.jp/home.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ab.png" width="30px" height="auto">
+            </a>
+
+            <a href="http://learning-sql.kikirara.jp/historyy.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ls2.png" width="30px" height="auto">
+            </a>
+            
+            <a href="http://learning-sql.kikirara.jp/profilee.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/user-regular.svg" width="30px" height="auto">
+            </a>
+          </div> 
+          </footer>  
+
+
+
+     <script>
+  // ページが読み込まれたときに実行される関数
+  window.onload = function() {
+      // アラートを表示
+      alert('横幅:1280以下もしくはスマホ・タブレット画面で可動します！');
+  };
+  </script>
+    <!-- JSONを扱うためのCDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+           const userData = {
+                matched_student_id: '',
+                matched_id: '',
+                name: '',
+                gender: '',
+                age: '',
+                introduction: '',
+                profile_image: '',
+            };
+        window.onload = function () {
+            const formData = new FormData();
+var student_id = localStorage.getItem('student_id');
+            // formData.append('student_id', student_id);
+            formData.append('student_id', student_id);
+            formData.append('check', '');
+
+            axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function (response) {
+                    if (JSON.stringify(response.data.check) == "false") {
+                        document.getElementById('profile_image').src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzHPvMlWAEj5EW1mmSjU_II1orfisTnkr6hg&usqp=CAU';
+                    }else {
+                        console.log(response);
+                    userData.matched_student_id = response.data[0].other_student_id;
+                  
+                    userData.matched_id = response.data[0].id;
+                    localStorage.setItem('match_id', userData.matched_id);
+                    // localStorage.setItem('matched_id', userData.matched_student_id);
+                    const formData2 = new FormData();
+                    formData2.append('student_id', userData.matched_student_id);
+                    formData2.append('profile', '');
+
+                    axios.post('http://learning-sql.kikirara.jp/main.php', formData2, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        })
+                        .then(function (response) {
+                            console.log(response.data.Data);
+                            userData.name = response.data.Data.name;
+                            userData.age = response.data.Data.age;
+                            userData.gender = response.data.Data.gender;
+                            userData.introduction = response.data.Data.introduction;
+                            userData.profile_image = response.data.Data.profile_image;
+                            // console.log(userData);
+                            document.getElementById('name').textContent = userData.name;
+                            document.getElementById('name2').textContent = userData.name;
+                            document.getElementById('age').textContent = userData.age;
+                            document.getElementById('gender').textContent = userData.gender;
+                            document.getElementById('introduction').textContent = userData.introduction;
+                            document.getElementById('profile_image').src = userData.profile_image;
+
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                    }
+                 
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        function locationChat() {
+            localStorage.setItem('history_name', userData.name);
+            location.href = 'http://learning-sql.kikirara.jp/chat.html';
+            
+        }
+  
+    </script>
+
+</body>
+
+</html>
