@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <title>プロフィール編集</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    @media screen and (max-width: 1280px){
+    @media screen and (min-width: 280px){
+    body{
+      background-image: url('http://learning-sql.kikirara.jp/uploads/h4.jpg');
+        /*height: 800px;*/
+        /*position:relative;*/
+        height: auto;
+    }
+.field {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5% 0 0 0;
+}
+
+.name {
+    margin: 0 10% 0 0;
+}
+
+.name_field {
+    
+    width: 20vh;
+    border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      line-height: 25px;
+    margin-top:30px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5% 0 0 0;
+    align-items: center;
+}
+
+
+
+.pagename {
+    font-size: 120%;
+}
+
+.done {
+ 
+    font-size: 110%;
+    display: flex;
+      
+        font-weight: 400;
+        line-height: 1.5;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #212529;
+        border-radius: 0.5rem;
+}
+
+.intrText {
+    margin-top: 30px;
+    margin-left:35px;
+    
+}
+
+.area {
+    margin: 30px auto 0 auto;
+    display: flex;
+    width: 80%;
+    height: 20vh;
+    border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+}
+
+.footer{
+    width:100%;
+    position:fixed;
+    bottom: 0;
+  }
+  
+  .bottom-menu {
+      display: block;
+      position:relative;
+      margin-top:auto;
+      justify-content: center;
+      text-align: center;
+      background-position: bottom;
+  }
+    
+    .bottom-menu a {
+      text-decoration: none;
+      color: #333;
+      padding: 20px;
+      margin:  20px;
+      bottom:0;
+  }
+ .pc{
+    display: none;
+  }
+}
+}
+@media screen and (min-width: 1280.5px){
+     body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  }
+    .back{
+display:none;
+}
+.pagename{
+display:none;
+}
+.done{
+display:none;
+}
+.field{
+display:none;
+}
+.intrText{
+display:none;
+}
+.area{
+display:none;
+}
+    .image{
+        display: none;
+    }
+    .white{
+        display: none;
+    }
+    .logo{
+      display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+  }
+  @media screen and (max-width: 279.5px){
+     body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  } .back{
+display:none;
+}
+.pagename{
+display:none;
+}
+.done{
+display:none;
+}
+.field{
+display:none;
+}
+.intrText{
+display:none;
+}
+.area{
+display:none;
+}
+    .logo{
+      display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+  }
+</style>
+<body>
+<div class="suisyo">
+        <p class="pc">スマホ画面での閲覧を推奨します</p>
+        </div>
+    <div class="top">
+        <div class="back">
+            <img src="http://learning-sql.kikirara.jp/uploads/yazirusi.png" onclick="locationp()" style="height:50px;margin-left:10px;"></div>
+            <div class="pagename" style="text-align: center;">設定</div>
+            <button id="submit-btn" class="done" onclick="locationp()" style="background-color: orange;">完了</button>
+    </div>
+    <div class="field">
+        <div class="name">名前</div>
+        <input type="text" id="name" class="name_field">
+    </div>
+    <div class="field">
+        <div class="name">年齢</div>
+        <input type="text" id="age" class="name_field">
+    </div>
+    <div class="field">
+        <div class="name">趣味</div>
+        <select id="hobby_id" name="hobby_id" class="name_field">
+            <option value="1">選択してください</option>
+            <option value="2">食事</option>
+            <option value="3">カフェ</option>
+            <option value="4">ゲーム</option>
+        </select>
+    </div>
+    <div class="intrText">自己紹介</div>
+
+    <textarea id="introduction" name="introduction" class="area"></textarea>
+    <footer class="footer">
+        <div class="bottom-menu">
+            <a href="http://learning-sql.kikirara.jp/home.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ab.png" width="30px" height="auto">
+            </a>
+
+            <a href="http://learning-sql.kikirara.jp/historyy.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ls2.png" width="30px" height="auto">
+            </a>
+            
+            <a href="http://learning-sql.kikirara.jp/profilee.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/user-regular.svg" width="30px" height="auto">
+            </a>
+          </div> 
+          </footer>  
+    <script>
+        function locationp() {
+            location.href = 'http://learning-sql.kikirara.jp/profilee.html'
+        }
+        var student_id = localStorage.getItem('student_id');
+        window.onload = function () {
+            const userData = {
+                name: '',
+                age: '',
+                hobby_id: '',
+                introduction: ''
+            };
+
+            // テキストからIDへのマッピング
+            const hobbyMap = {
+                "選択してください": 1,
+                "食事": 2,
+                "カフェ": 3,
+                "ゲーム": 4
+            };
+
+            const formData = new FormData();
+            formData.append('student_id', student_id);
+            formData.append('profile', '');
+
+            axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    userData.name = response.data.Data.name;
+                    userData.age = response.data.Data.age;
+                    userData.hobby_id = response.data.Data.hobby;
+                    userData.introduction = response.data.Data.introduction;
+                    // console.log(userData);
+
+                    // ページのロード時に入力フィールドを初期化
+                    Object.keys(userData).forEach(key => {
+                        const inputElement = document.getElementById(key);
+                        if (inputElement) {
+                            if (inputElement.nodeName === 'SELECT') {
+                                const options = inputElement.options;
+                                for (let i = 0; i < options.length; i++) {
+                                    if (options[i].text === userData[key]) {
+                                        options[i].selected = true;
+                                        break;
+                                    }
+                                }
+                            } else {
+                                inputElement.value = userData[key];
+                            }
+                        }
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+            document.getElementById('submit-btn').addEventListener('click', function () {
+                const formData = new FormData();
+                const name = document.getElementById('name').value;
+                const age = document.getElementById('age').value;
+                const hobbyElement = document.getElementById('hobby_id');
+                const hobby_id = hobbyElement.options[hobbyElement.selectedIndex].value;
+                const introduction = document.getElementById('introduction').value;
+
+                formData.append("profile_edit", '');
+                formData.append("student_id", student_id);
+                formData.append("name", name);
+                formData.append("age", age);
+                formData.append("hobby_id", hobby_id);
+                formData.append("introduction", introduction);
+
+                axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                        const formData = new FormData();
+
+                        formData.append('student_id', student_id);
+                        formData.append('match', '');
+
+                        axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                                headers: {
+                                    'Content-Type': 'multipart/form-data'
+                                }
+                            })
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                        location.reload();
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            });
+
+        };
+    </script>
+</body>
+
+
+</html>

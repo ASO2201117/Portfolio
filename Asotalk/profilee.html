@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+    <title>プロフィール</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <style>
+    
+        @media screen and (max-width: 1280px){
+    @media screen and (min-width: 280px){
+            body{
+              background-image: url('http://learning-sql.kikirara.jp/uploads/h4.jpg');
+                /*height: 800px;*/
+               margin-top:0px;
+               margin-left:0px;
+               margin-right:0px;
+               margin-bottom:0px;
+                height: auto;
+            }
+            .top {
+                display: flex;
+                justify-content: space-between;
+  
+            }
+        
+            .logo {
+                width: 30%;
+            }
+        
+            .gyar {
+                width: 15%;
+            }
+        
+            .image {
+                width: 30%;
+                margin: 10% auto 5% auto;
+                display: flex;
+            }
+            
+            .maru{       /* ※縦横を同値に */
+                    height: 30%;       /* ※縦横を同値に */
+                    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+                    background-position: center center;  /* 横長画像の左上を基準に表示 */
+                    display: inline-block;
+                    width: 30%;
+                    margin: 10% auto 5% auto;
+                    display: flex;          /* 複数の画像を横に並べたい場合 */
+            }
+            
+            
+            
+            
+           
+            .center {
+                display: flex;
+                text-align: center;
+                margin: 0 auto;
+                justify-content: center;
+                font-size: 150%;
+            }
+        
+            .hobby {
+                text-align: center;
+                font-size: 120%;
+            }
+        
+            .introduction {
+                text-align: center;
+                padding: 10px;
+                margin: 5% 0 0 5%;
+                font-size: 100%;
+            }
+        
+            .hobby_text {
+                margin: 5% 0 0 5%;
+                font-size: 120%;
+            }
+        
+            .introduction_text {
+                margin: 5% 0 0 5%;
+                font-size: 110%;
+            }
+        
+            .image_text {
+                margin: 10% 0 0 5%;
+                font-size: 120%;
+            }
+        
+            .file {
+                margin-top:0px;
+                padding-top:0px;
+                padding-left: 10px;
+            }
+        
+            .image_box {
+                display: flex;
+                align-items: center;
+        
+            }
+            .button {
+                display: flex;
+                margin: 5% 10% 0 auto;
+                font-size: 1.0rem;
+                font-weight: 500;
+                line-height: 1.5;
+                position: relative;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-transition: all 0.3s;
+                transition: all 0.3s;
+                text-align: center;
+                vertical-align: middle;
+                text-decoration: none;
+                letter-spacing: 0.1em;
+                color: #212529;
+                border-radius: 0.5rem;
+        
+            }
+            .line {
+                margin-top: 5%;
+                width: 100vw;
+                height: 5px;
+                background-color: #6fc2fc;
+            }
+            .min{
+                margin: 10% 0 0 5%;
+                font-size: 120%;    
+                align-items: center;
+                gap: 10px;
+                }
+            .min2{
+                margin: 0 0 0 5%;
+                font-size: 120%;                
+                align-items: center;
+                gap: 10px;
+                line-height: 70px;
+                 }
+                 
+            
+        .footer{
+            width:100%;
+            position:fixed;
+            bottom: 0;
+          }
+          
+          .bottom-menu {
+              display: block;
+              position:relative;
+              margin-top:auto;
+              justify-content: center;
+              text-align: center;
+              background-position: bottom;
+          }
+            
+            .bottom-menu a {
+              text-decoration: none;
+              color: #333;
+              padding: 20px;
+              margin:  20px;
+              bottom:0;
+          }
+.pc{
+    display: none;
+  }
+        }
+}
+@media screen and (min-width: 1280.5px){
+     body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  }
+    .image{
+        display: none;
+    }
+    .white{
+        display: none;
+    }
+    .logo{
+      display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+.maru{
+display:none;
+}
+.top{
+display:none;
+}
+.min{
+display:none;
+}
+.min2{
+display:none;
+}
+  }
+  @media screen and (max-width: 279.5px){
+   body {
+    /* 画像ファイルの指定 */
+    background-image: url(PChaikei.png);
+     
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+     
+    /* 画像をタイル状に繰り返し表示しない */
+    background-repeat: no-repeat;
+     
+    /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+    background-attachment: fixed;
+     
+    /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+     
+    /* 背景画像が読み込まれる前に表示される背景のカラー */
+    background-color: #464646;
+  }
+  .pc{
+    text-align: center;
+  }
+  .suisyo{
+        position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+        font-size:30px;
+	padding: 15px 30px;
+	color:blue;
+	width: 500px;
+  }
+    .logo{
+      display: none;
+    }
+    .center{
+      display: none;
+    }
+    .radis{
+      display: none;
+    }
+    .tyui{
+      display: none;
+    }
+    .bottom-menu{
+      display: none;
+    }
+    .pass{
+      display:none;
+    }
+.maru{
+display:none;
+}
+.top{
+display:none;
+}
+.min{
+display:none;
+}
+.min2{
+display:none;
+}
+  }
+        </style>
+
+
+<body>
+<div class="suisyo">
+        <p class="pc">スマホ画面での閲覧を推奨します</p>
+        </div>
+    <div class="top">
+        <img class="logo" src="http://learning-sql.kikirara.jp/asotalk_blue.png">
+        <img src="https://icon-pit.com/wp-content/uploads/2018/12/haguruma_gear_icon_3737.png" class="gyar" onclick="locationEdit()">
+    </div>
+    <img id="profile-image" src="" class="maru">
+    <div class="center">
+        <div id="name"></div>,
+        <div id="age" style="margin-top:1px;"></div>
+    </div>
+    <div class="line"></div>
+    <div class="min">
+    <div class="image_box">
+    画像<input type="file" class="file" id="fileToUpload"> 
+    </div>
+        <button id="uploadButton" class="button" style="background-color: orange;">変更</button>
+    <!--<input type="button" value="変更" id="uploadButton" class="button">-->
+    </div>
+    <div class="min2">
+    趣味<div id="hobby" class="hobby" style="margin-right:20px;"></div>
+    自己紹介<div id="introduction" class="introduction" style="margin-right:20px;"></div>
+    </div>
+    <footer class="footer">
+        <div class="bottom-menu">
+            <a href="http://learning-sql.kikirara.jp/home.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ab.png" width="30px" height="auto">
+            </a>
+
+            <a href="http://learning-sql.kikirara.jp/historyy.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/ls2.png" width="30px" height="auto">
+            </a>
+            
+            <a href="http://learning-sql.kikirara.jp/profilee.html">
+                    <img src="http://learning-sql.kikirara.jp/uploads/user-regular.svg" width="30px" height="auto">
+            </a>
+          </div> 
+          </footer>  
+    <script>
+        var student_id = localStorage.getItem('student_id');
+        window.onload = function () {
+            const formData = new FormData();
+            
+            formData.append('student_id', student_id);
+            formData.append('profile', '');
+
+            axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    const url = response.data.Data.profile_image;
+                    const name = response.data.Data.name;
+                    const age = response.data.Data.age;
+                    const introduction = response.data.Data.introduction;
+                    const hobby = response.data.Data.hobby;
+                    document.getElementById('name').innerText = name;
+                    document.getElementById('age').innerText = age;
+                    document.getElementById('introduction').innerText = introduction;
+                    document.getElementById('hobby').innerText = hobby;
+                    document.getElementById('profile-image').src = url;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        };
+        document.getElementById('uploadButton').addEventListener('click', function (e) {
+            e.preventDefault(); 
+
+            let fileToUpload = document.getElementById('fileToUpload').files[0];
+
+            let formData = new FormData();
+            formData.append('student_id', student_id);
+            formData.append('fileToUpload', fileToUpload);
+            formData.append('image_edit', '');
+
+            axios.post('http://learning-sql.kikirara.jp/main.php', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function (response) {
+                    console.log(response);
+                    location.reload();
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+        function locationEdit() {
+            location.href = 'http://learning-sql.kikirara.jp/profile_editt.html'
+        }
+    </script>
+</body>
+
+
+</html>
